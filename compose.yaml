@@ -1,0 +1,16 @@
+services:
+  spark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    working_dir: /app
+
+    volumes:
+      - .:/app
+      - ./.cache/ivy:/tmp/ivy
+
+    environment:
+      HOME: /tmp/spark-home
+      MPLBACKEND: Agg
+      MPLCONFIGDIR: /tmp/matplotlib
