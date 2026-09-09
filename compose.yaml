@@ -10,7 +10,15 @@ services:
       - .:/app
       - ./.cache/ivy:/tmp/ivy
 
+    ports:
+      - "127.0.0.1:8888:8888"
+
     environment:
       HOME: /tmp/spark-home
+
+      SPARK_HOME: /opt/spark
+
+      PYTHONPATH: /app:/opt/spark/python:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
+
       MPLBACKEND: Agg
       MPLCONFIGDIR: /tmp/matplotlib
