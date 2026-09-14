@@ -15,10 +15,11 @@ services:
 
     environment:
       HOME: /tmp/spark-home
-
       SPARK_HOME: /opt/spark
 
       PYTHONPATH: /app:/opt/spark/python:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
+
+      JAVA_TOOL_OPTIONS: "-Djava.net.preferIPv4Stack=true"
 
       MPLBACKEND: Agg
       MPLCONFIGDIR: /tmp/matplotlib
